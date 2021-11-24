@@ -19,11 +19,8 @@ argparser.add_argument('-f', '--file',
 
 args = argparser.parse_args()
 
-# Open a serial port on the second FTDI device interface (IF/2) @ 3Mbaud
+# Open a serial port on the second FTDI device interface
 port = pyftdi.serialext.serial_for_url(args.device, args.baudrate)
-
-# Send bytes
-port.write(b'Hello World')
 
 # Receive bytes
 
